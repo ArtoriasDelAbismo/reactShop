@@ -11,6 +11,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
+    mode: 'development',
     module: {
         rules: [
             {
@@ -44,5 +45,9 @@ module.exports = {
             filename: './index.html',
         }),
         new MiniCssExtractPlugin(),
-    ]
+    ],
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        port: 3000,
+    }
 }
