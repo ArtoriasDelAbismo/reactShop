@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/Login.scss';
+import '../styles/CreateAccount.scss';
 
-const Login = () => {
+const CreateAccount = () => {
   return (
-    <div className="login" >
+    <div className="CreateAccount" >
         <div className="form-container" />
             <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
 
@@ -25,4 +25,4 @@ const Login = () => {
   );
 }
 
-export default Login
+export default CreateAccount;
