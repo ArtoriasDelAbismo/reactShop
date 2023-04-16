@@ -1,28 +1,53 @@
-import React from 'react';
-import '../styles/CreateAccount.scss';
+import React from "react";
 
 const CreateAccount = () => {
-  return (
-    <div className="CreateAccount" >
-        <div className="form-container" />
-            <img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+    return (
+      <div className="login">
+        <div className="form-container">
+          <h1 className="title">My account</h1>
 
-            <h1 className="title">Create a new password</h1>
-            <p className="subtitle">Enter a new password for your account</p>
+          <form action="/" className="form">
+            <div className="form">
+              <label for="name" className="label">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Teff"
+                className="input input-name"
+              />
 
-            <form action="/" className="form">
-                <label for="password" className="label">Password</label>
-                <input type="password" id="password" placeholder="*********" className="input input-password" />
+              <label for="email" className="label">
+                Email
+              </label>
+              <input
+                type="text"
+                id="email"
+                placeholder="platzi@example.com"
+                className="input input-email"
+              />
 
-                <label for="new-password" className="label">Password</label>
-                <input type="password" id="new-password" placeholder="*********" className="input input-password" />
+              <label for="password" className="label">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                placeholder="*********"
+                className="input input-password"
+              />
+            </div>
 
-                <input type="submit" value="Confirm" className="primary-button login-button" />
-            </form>
-        <div/>
-    </div>
-
-  );
+            <input
+              type="submit"
+              value="Create"
+              className="primary-button login-button"
+            />
+          </form>
+        </div>
+      </div>
+    );
 }
 
 export default CreateAccount;
