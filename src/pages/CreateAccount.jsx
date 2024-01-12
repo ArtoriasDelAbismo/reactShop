@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
 import '@styles/CreateAccount.scss'
 const CreateAccount = () => {
+  const inputRef = useRef()
+
+  function focus(){
+    inputRef.current.focus();
+  }
+
     return (
       <div className="login">
         <div className="form-container">
-          <h1 className="title">My account</h1>
+          <h1 className="title" onClick={focus}>My account</h1>
 
           <form action="/" className="form">
             <div className="form">
@@ -16,6 +22,7 @@ const CreateAccount = () => {
                 id="name"
                 placeholder="Teff"
                 className="input input-name"
+                ref={inputRef}
               />
 
               <label for="email" className="label">

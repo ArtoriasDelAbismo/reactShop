@@ -12,24 +12,29 @@ import Checkout from "@pages/Checkout";
 import Orders from "@pages/Orders";
 import SendEmail from "@pages/SendEmail";
 import Layout from "@containers/Layout";
+import AppContext from '../context/AppContext'
+import useInitialState from "../hooks/useInitialState";
 const App = () => {
+  const initialState = useInitialState();
   return (
-    <BrowserRouter>
-      <Layout />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/create-password" element={<CreatePassword />} />
-          <Route path="/recover-password" element={<RecoverPassword />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/MyAccount" element={<MyAccount />} />
-          <Route path="/Checkout" element={<Checkout />} />
-          <Route path="/Orders" element={<Orders />} />
-          <Route path="/Send-Email" element={<SendEmail />} />
-        </Routes>
-      
-    </BrowserRouter>
+    <AppContext.Provider value = {initialState}>
+      <BrowserRouter>
+        <Layout />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/create-password" element={<CreatePassword />} />
+            <Route path="/recover-password" element={<RecoverPassword />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/Login" element={<Login />} />
+            <Route path="/create-account" element={<CreateAccount />} />
+            <Route path="/MyAccount" element={<MyAccount />} />
+            <Route path="/Checkout" element={<Checkout />} />
+            <Route path="/Orders" element={<Orders />} />
+            <Route path="/Send-Email" element={<SendEmail />} />
+          </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
+        
   );
 };
 
